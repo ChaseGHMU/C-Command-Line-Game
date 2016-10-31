@@ -1,15 +1,5 @@
 #include "game.h"
-//HI! I'm guessing you're here to satisfy curiosity, or to make your own additions.
-//Feel free to change anything you want, but do so at your own risk. A few things 
-//are a little complex (maybe too complex), but it's pretty straightforward. Knock yourself out. 
 
-//Or you are here to find a seg fault. That's cool too. Keep in mind that this code works,
-//so you will need to stick mostly to your code to find problems. 
-
-//Okay, so the fight is turn-based. BUT, the hero and the boss aren't 
-//the same type, so you can't just throw everything in an array. 
-//So the heroes are copied into a separate array, and the boss is tacked
-//on at the end as a 'dummy hero' just to find its place in the turn order. 
 int fight(Boss* boss, Hero* heroes)
 {
 	//copy everything over
@@ -32,11 +22,6 @@ int fight(Boss* boss, Hero* heroes)
 	ActionNode* currentList = NULL;
 	while(1)
 	{
-		//Now here's where things start to get weird. 
-		//I use the original array of heroes when printing 
-		//the battlefield to conserve the order of heroes chosen,
-		//but that means that I have to update the health values of 
-		//the original array. That gets a little weird later.
 		printFightStatus(boss, heroes);
 		//user chooses the next action for each hero. The boss is automatic. 
 		getHeroDecisions(h);
@@ -45,7 +30,6 @@ int fight(Boss* boss, Hero* heroes)
 		{
 			return 1;
 		}
-		//flavor? 
 		printf("***********EVENTS***********\n");
 		allHeroesDead = true;
 		//prep the list of boss actions that will be used next if
@@ -165,9 +149,7 @@ void getHeroDecisions(Hero* heroes)
 		}
 	}
 }
-
-//I'm not good with printf formatting. There is so much you can do with this. 
-//e.g.: there are colors you can do. 
+ 
 void printFightStatus(Boss* boss, Hero* heroes)
 {
 	printf("\n\n***************THE BATTLEFIELD*************\n\n");
@@ -199,7 +181,6 @@ void handleBossAction(Boss* boss, Hero* heroes, Decision d, int* place)
 			break;
 		case ATTACK:
 			printf("%s attacks! ", boss->name);
-			//This is where things start to get weird again. 
 			//I have to find a hero that is alive for the boss
 			//to attack, but the array has the boss in it. 
 			//So not only do you have to figure out if you randomed the 

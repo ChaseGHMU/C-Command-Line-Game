@@ -1,7 +1,5 @@
 #include "game.h"
 
-//Knock yourself out boys and girls.
-
 Boss* loadBoss()
 {
 	/*Create Boss Pointer

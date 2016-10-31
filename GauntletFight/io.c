@@ -236,11 +236,10 @@ Hero* loadInitialData()
 FileFinder findSaveFile()
 {
 	printf("Checking save file...\n\n");
-	//This should exist. Make sure the file is with your HW. 
+	//This should exist. Make sure the file is there 
 	FILE* fp = fopen("gamestate.txt", "r");
 	if(!fp)
 	{
-		//You will have to debug this...it could be for a variety of reasons. 
 		perror("gamestate.txt read error");
 		exit(1);
 	}
@@ -537,7 +536,7 @@ int chooseSaveFile()
 				deleteFile(choice, choiceToFile(choice-1));
 			}
 			freeMemory(names, states);
-			//I haven't found a bug yet with the state = 1, but there might be one somewhere. 
+
 			return choice;
 		}
 	}

@@ -1,10 +1,5 @@
 #include "game.h"
 
-//Here to make your own contributions? Have at it!
-
-//(the first thing you'll want to do is add error checking where it's missing.
-//A lot of it is missing across files.)
-
 int main(void)
 {
 	srand(time(NULL));
@@ -138,9 +133,6 @@ void playGame(Hero* heroes, char* playerName, Boss* boss, int progress, int choi
 			break;
 	}
 	
-
-	//I don't actually remember why I did this, but it works. 
-	//I think because if it's a save file, it's freed elsewhere?
 	if(initialprogress == 0)
 	{
 		free(playerName);
@@ -151,7 +143,6 @@ void playGame(Hero* heroes, char* playerName, Boss* boss, int progress, int choi
 void freeMemory(char** names, int* states)
 {
 	int i;
-	//seg faults? Check input file/gdb. 
 	for(i = 0; i < MAXNUMSAVEFILES; i++)
 	{
 		free(names[i]);

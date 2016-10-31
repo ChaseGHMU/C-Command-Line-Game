@@ -4,8 +4,7 @@ Hero* pickHeroes(Hero* heroes)
 {
 	sortHeroes(heroes);
 	Hero* chosenHeroes = malloc(sizeof(Hero) * NUMCHOSENHEROES);
-	//could print all the heroes every time a user goes to pick another 
-	//hero, maybe later
+
 	printHeroes(heroes, NUMHEROES);
 
 	int heroespicked = 0;

@@ -1,9 +1,5 @@
 #include "game.h"
 
-//I TAKE ABSOLUTELY NO CREDIT FOR ANY OF THE CODE BELOW EXCEPT FOR BELOW THE LINE OF GIVEN FUNCTIONS. 
-//I changed a few lines for where the parsing functions are called. The rest is from a student submission
-//that I thought was excellent in code and comments. 
-
 Shop* loadShop()
 {
 /*The loadShop function prepares a shop that players will buy weapons and shields from. It reads in shield and sword information from a .txt file
@@ -427,7 +423,6 @@ void printSwords(Sword* swords)
 
 Sword* removeSwordFromList(Sword** swords, int choice) //Removes a chosen sword from the list.
 {
-	//BONUS: Utilized both prevSword and nextSword to remove swords from list.
 	//Initialize utility pointers
 	Sword* holdSword;
 	Sword* currentSword;
@@ -500,7 +495,6 @@ Sword* removeSwordFromList(Sword** swords, int choice) //Removes a chosen sword 
 
 Shield* removeShieldFromList(Shield** shields, int choice) //Removes a chosen shield from the list.
 {
-	//BONUS: Utilized both prevShield and nextShield to remove swords from list.
 	
 	//Initialize utility pointers
 	Shield* holdShield;
@@ -572,8 +566,6 @@ Shield* removeShieldFromList(Shield** shields, int choice) //Removes a chosen sh
 	//Return the information for the chosen sword.
 	return currentShield;
 }
-
-/***************************START OF FUNCTIONS GIVEN TO YOU**********************************/
 
 void freeHeroesAndItems(Hero* heroes)
 {
